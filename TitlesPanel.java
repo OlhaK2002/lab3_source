@@ -29,14 +29,18 @@ public class TitlesPanel extends JPanel implements ActionListener
         (this.animation = new Timer(50, this)).setInitialDelay(50);
         this.animation.start();
     }
-    
+
+    /**
+     * Method for repainting shapes in the program.
+     * @param  arg0 an ActionEvent object that helps to listen catches.
+     */
     @Override
     public void actionPerformed(final ActionEvent arg0) {
         if (this.is_done) {
             this.repaint();
         }
     }
-    
+
     private void doDrawing(final Graphics g) {
         this.is_done = false;
         (this.g2d = (Graphics2D)g).setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
@@ -63,7 +67,11 @@ public class TitlesPanel extends JPanel implements ActionListener
         }
         this.is_done = true;
     }
-    
+
+    /**
+     * Method for painting specified shapes in the program.
+     * @param  g  a Graphics object that needs to be drawn.
+     */
     public void paintComponent(final Graphics g) {
         super.paintComponent(g);
         this.doDrawing(g);

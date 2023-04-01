@@ -20,7 +20,12 @@ public class ShapeFactory
     public Paint paint;
     public int width;
     public int height;
-    
+
+    /**
+     * This is a special class method for finding the shape and features of a figure
+     *
+     * @param  shape_type is a value for find the shape and features of a figure
+     */
     public ShapeFactory(final int shape_type) {
         this.width = 25;
         this.height = 25;
@@ -81,7 +86,15 @@ public class ShapeFactory
             }
         }
     }
-    
+
+    /**
+     *  Method of creating a special figure in the form of a star
+     * @param  arms  are the number of sides of a star
+     * @param  center is a Point object to calculate star coordinates
+     * @param  rOuter is the radius of the outer circle
+     * @param  rInner is the radius of the inner circle
+     * @return path is the location of the star
+     */
     private static Shape createStar(final int arms, final Point center, final double rOuter, final double rInner) {
         final double angle = 3.141592653589793 / arms;
         final GeneralPath path = new GeneralPath();
